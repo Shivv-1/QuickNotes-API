@@ -1,25 +1,52 @@
-# QuickNotes API
+# 📌 QuickNotes API
 
-A simple REST API for managing notes with search functionality, built with Node.js and Express.
+A simple RESTful API for managing notes with full CRUD (Create, Read, Update, Delete) functionality.  
+This project was built to practice backend development, API design, and handling HTTP requests and responses.
 
-## Prerequisites
-- Node.js v18+
+---
 
-## Setup
-1. Clone the repo
-2. npm install
-3. node app.js
+## 🚀 Features
 
-## Endpoints
+- Create a new note  
+- Retrieve all notes  
+- Update an existing note  
+- Delete a note  
+- Handles JSON request and response data  
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | /notes | Get all notes |
-| GET | /notes?search=keyword | Search notes by title |
-| GET | /notes/:id | Get a single note |
-| POST | /notes | Create a note |
-| PUT | /notes/:id | Update a note |
-| DELETE | /notes/:id | Delete a note |
+---
+
+## 🛠️ Tech Stack
+
+- Node.js / Python (REPLACE WITH YOUR ACTUAL TECH)
+- Express / Flask (REPLACE WITH YOUR FRAMEWORK)
+- JSON for data handling  
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint        | Description            |
+|--------|---------------|------------------------|
+| GET    | /notes        | Get all notes          |
+| POST   | /notes        | Create a new note      |
+| PUT    | /notes/:id    | Update a note by ID    |
+| DELETE | /notes/:id    | Delete a note by ID    |
+
+---
+
+## ▶️ How to Run
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Shivv-1/QuickNotes-API.git
+cd QuickNotes-API
+```
+
+### 2. Install dependencies
+npm install
+
+### 3. Start the Server
+npm start
 
 ## Request Body (POST/PUT)
 {

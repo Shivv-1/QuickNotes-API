@@ -1,0 +1,480 @@
+{
+  "info": {
+    "_postman_id": "434d8e83-5001-4917-81b9-f7844b488fb5",
+    "name": "QuickNotes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53344699",
+    "_collection_link": "https://go.postman.co/collection/53344699-434d8e83-5001-4917-81b9-f7844b488fb5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Note",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"My First Note\",\r\n  \"content\": \"This is my first note in QuickNotes API\",\r\n  \"tags\": [\"personal\", \"test\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/notes",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "notes"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Note Success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"My First Note\",\r\n  \"content\": \"This is my first note in QuickNotes API\",\r\n  \"tags\": [\"personal\", \"test\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/notes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notes"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "197"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"c5-XHibhPG94Bum2zpSUwXHnMFRLik\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Apr 2026 08:40:28 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"note\": {\n        \"id\": \"dd314c6e-f76f-4555-a984-2739521b011b\",\n        \"title\": \"My First Note\",\n        \"content\": \"This is my first note in QuickNotes API\",\n        \"tags\": [\n            \"personal\",\n            \"test\"\n        ],\n        \"created_at\": \"2026-04-14T08:40:28.520Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get All Notes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/notes",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "notes"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get All Notes Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/notes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notes"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "200"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"c8-UFr5c6pScjahYMNc2u6uRdTLDwM\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Apr 2026 08:42:15 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"notes\": [\n        {\n            \"id\": \"dd314c6e-f76f-4555-a984-2739521b011b\",\n            \"title\": \"My First Note\",\n            \"content\": \"This is my first note in QuickNotes API\",\n            \"tags\": [\n                \"personal\",\n                \"test\"\n            ],\n            \"created_at\": \"2026-04-14T08:40:28.520Z\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Search Notes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/notes?search=First",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "notes"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "First",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Search Notes Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/notes?search=First",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notes"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "First"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "200"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"c8-UFr5c6pScjahYMNc2u6uRdTLDwM\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Apr 2026 08:45:20 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"notes\": [\n        {\n            \"id\": \"dd314c6e-f76f-4555-a984-2739521b011b\",\n            \"title\": \"My First Note\",\n            \"content\": \"This is my first note in QuickNotes API\",\n            \"tags\": [\n                \"personal\",\n                \"test\"\n            ],\n            \"created_at\": \"2026-04-14T08:40:28.520Z\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Single Note",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/notes/dd314c6e-f76f-4555-a984-2739521b011b",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "notes",
+            "dd314c6e-f76f-4555-a984-2739521b011b"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Single Note Sucess",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/notes/dd314c6e-f76f-4555-a984-2739521b011b",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notes",
+                "dd314c6e-f76f-4555-a984-2739521b011b"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "197"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"c5-XHibhPG94Bum2zpSUwXHnMFRLik\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Apr 2026 08:46:32 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"note\": {\n        \"id\": \"dd314c6e-f76f-4555-a984-2739521b011b\",\n        \"title\": \"My First Note\",\n        \"content\": \"This is my first note in QuickNotes API\",\n        \"tags\": [\n            \"personal\",\n            \"test\"\n        ],\n        \"created_at\": \"2026-04-14T08:40:28.520Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Note",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"My Updated Note\",\r\n  \"content\": \"This content has been updated\",\r\n  \"tags\": [\"personal\", \"updated\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/notes/dd314c6e-f76f-4555-a984-2739521b011b",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "notes",
+            "dd314c6e-f76f-4555-a984-2739521b011b"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Note Success",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"My Updated Note\",\r\n  \"content\": \"This content has been updated\",\r\n  \"tags\": [\"personal\", \"updated\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/notes/dd314c6e-f76f-4555-a984-2739521b011b",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notes",
+                "dd314c6e-f76f-4555-a984-2739521b011b"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "232"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"e8-UL4vmXS4w1HxryDW/qUA3121e10\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Apr 2026 09:04:03 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"note\": {\n        \"id\": \"dd314c6e-f76f-4555-a984-2739521b011b\",\n        \"title\": \"My Updated Note\",\n        \"content\": \"This content has been updated\",\n        \"tags\": [\n            \"personal\",\n            \"updated\"\n        ],\n        \"created_at\": \"2026-04-14T08:40:28.520Z\",\n        \"updated_at\": \"2026-04-14T09:04:03.427Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Note",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/notes/dd314c6e-f76f-4555-a984-2739521b011b",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "notes",
+            "dd314c6e-f76f-4555-a984-2739521b011b"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Note Success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/notes/dd314c6e-f76f-4555-a984-2739521b011b",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "notes",
+                "dd314c6e-f76f-4555-a984-2739521b011b"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "39"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"27-eRA9GiVZL6kII4bX/HmG//anwi0\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Apr 2026 09:05:39 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Note deleted successfully\"\n}"
+        }
+      ]
+    }
+  ]
+}
